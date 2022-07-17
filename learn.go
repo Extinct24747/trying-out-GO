@@ -55,7 +55,7 @@ func main(){
 	float64 = un número decimal con 16 valores como máximo
 	después del punto.
 	string = texto
-	bool = un valor booleano (verdadeo o falso)
+	bool = un valor booleano (verdadero o falso)
 	Las valores que son declaradas sin un valor toman el valor
 	correspondiente a 0 de su tipo de dato.
 	*/
@@ -74,4 +74,46 @@ func main(){
 	*/
 	const pi = 3.14
 	fmt.Println(pi)
+	//Adición
+	fmt.Println(num + num2)
+	//Sustracción
+	fmt.Println(num3 - num)
+	//Multiplicación
+	fmt.Println(num1 * num2)
+	//División
+	fmt.Println(num1 / num)
+	//Módulo (resto de la divisón)
+	fmt.Println(num % num2)
+	/*
+	En GO se puede asignar operaciones aritméticas usan operadores
+	acortados con formato "[operador]=".
+	*/
+	z := 15
+	w := 32
+	fmt.Println(z)
+	z += w //z = z + w
+	fmt.Println(z)
+	/*
+	Los operadores de relación se usan para comparar dos valores y
+	dar como resultado un booleano: verdadero si la condición se
+	cumple y falso si no lo hace.
+	*/
+	a := 1
+	b := 2
+	fmt.Println(a == b) //igual que
+	fmt.Println(a != b) //diferente de
+	fmt.Println(a > b) //mayor que
+	fmt.Println(a < b) //menor que
+	fmt.Println(a >= b) //mayor igual que
+	fmt.Println(a <= b) //menor igual que
+	/*
+	Los operadores lógicos son usados para combinar dos o más
+	condiciones.
+	*/
+	fmt.Println(a == b && a != b) //&& Ambas condiciones deben ser verdaderas para que retorne verdadero.
+	fmt.Println(a == b || a != b) //||Si una o ambas condiciones son verdaderas entonces retorna verdadero.
+	fmt.Println(!(a == b)) //! Si las condiciones son falsas, retorna verdadero.
+	//Se pueden combinar varias condiciones y usar paréntesis para agruparlas.
+	fmt.Println((x > 0 && x < 100) || x == 42)
+
 }
