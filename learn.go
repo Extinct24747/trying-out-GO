@@ -115,5 +115,38 @@ func main(){
 	fmt.Println(!(a == b)) //! Si las condiciones son falsas, retorna verdadero.
 	//Se pueden combinar varias condiciones y usar paréntesis para agruparlas.
 	fmt.Println((x > 0 && x < 100) || x == 42)
-
+	/*
+	Para aceptar input del usuario se usa la función "fmt.Scanln(&[variable])"
+	El & antes de la variable se usa para retornar la dirección de la variable.
+	*/
+	fmt.Println("Ingrese un número: ")
+	var input int
+	fmt.Scanln(&input) //Scanln puede aceptar diversos tipos de datos.
+	fmt.Println(input)
+	/*
+	Se puede usar la declaración "if" para tomar decisiones y
+	hacer que una sección del código corra sólo si cumple una
+	condición específica.
+	*/
+	fmt.Println("Ingrese su edad: ")
+	var edad int
+	fmt.Scanln(&edad)
+	if edad > 18 {
+		fmt.Println("Puede ingresar.")
+	} else {
+		fmt.Println("No puede ingresar.") /*
+		Else puede ser usado para ejecutar un código si es que
+		la condición de la declaración if resultó falsa.
+		*/
+	}
+	/*
+	Cuando se necesita declarar una variable únicamente para la declaración if
+	se puede declarar la variable en la línea de la declaración if. Las variables
+	declaradas de este modo solo existen dentro del bloque if.
+	*/
+	if d := 5; d > 18 { //El punto y coma después de la declaración de la variable separa la declaración de la condición.
+		fmt.Println("Es mayor de edad.")
+	} else {
+		fmt.Println("No es mayor de edad.")
+	}
 }
