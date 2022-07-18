@@ -149,4 +149,143 @@ func main(){
 	} else {
 		fmt.Println("No es mayor de edad.")
 	}
+	/*
+	En caso de que queramos establecer diferentes resultados
+	posibles usando if/else, podemos usar la declaración
+	"switch" para hacer el código más corto y fácil de leer.
+	Igual que en una declaración if se pueden declarar
+	variables en la línea misma del switch.
+	En caso de que se cumplan dos casos, Go ejecuta solo el
+	primero y salta el resto.
+	*/
+	var d int
+	fmt.Println("Ingrese su edad.")
+	fmt.Scanln(&d)
+	switch d {
+	case 1: //Si "d" es 1 imprime.
+		fmt.Println("El número es 1.")
+	case 2: //Si "d" es 2 imprime.
+		fmt.Println("El número es 2.")
+	default: //Si "d" no es ninguna de las dos imprime.
+		fmt.Println("El número no es ni 1 ni 2.")
+	}
+	//También se puede usar la declaración switch sin una expresión.
+	switch {
+	case d > 18 && d < 21:
+		fmt.Println("Mayor de edad pero no puede beber.")
+	case d < 18:
+		fmt.Println("Menor de edad.")
+	default:
+		fmt.Println("Mayor de edad y puede beber.")
+	}
+	/*
+	Go permite hacer uso de loops que son declaraciones
+	que se ejecutan hasta que una condición se vuelva
+	verdadera. La única declaración loop que existe en
+	Go es "for".
+	La declaración "for" se realiza con el formato:
+	for [init]; [condición]; [declaración posterior] {[código a ejecutar]}
+	El código después de esto escribe los números desde
+	15 al 20 mientras que el valor de e sea menor que
+	20.
+	*/
+	for e:=15; e<=20; e++ { //e++ es otra forma de escribir e+=1 o e=e+1
+		fmt.Println(e)
+	}
+	/*
+	Se puede omitir las partes con el init y la condición
+	de la declaración for. Lo cual la vuelve parecida a
+	las declaraciones while de otros lenguajes.
+	El código de abajo escribe el resultado de sumar todos
+	los números del 1 al 1000 entre sí.
+	*/
+	sum := 1
+	res := 0
+	for sum<=1000 {
+		res += sum
+		sum++
+	}
+	fmt.Println(res)
+	//Imprimir el nombre del número en inglés.
+	var f int
+	var g int
+	var h int
+	fmt.Println("Ingrese un número: ")
+	fmt.Scanln(&f)
+	fmt.Println("Ingrese otro número: ")
+	fmt.Scanln(&g)
+	fmt.Println("Ingrese otro número: ")
+	fmt.Scanln(&h)
+	switch {
+	case f==0:
+		fmt.Println("Zero")
+	case f==1:
+		fmt.Println("One")
+	case f==2:
+		fmt.Println("Two")
+	case f==3:
+		fmt.Println("Three")
+	case f==4:
+		fmt.Println("Four")
+	case f==5:
+		fmt.Println("Five")
+	case f==6:
+		fmt.Println("Six")
+	case f==7:
+		fmt.Println("Seven")
+	case f==8:
+		fmt.Println("Eight")
+	case f==9:
+		fmt.Println("Nine")
+	case f==10:
+		fmt.Println("Ten")
+	}
+	switch g {
+	case 0:
+		fmt.Println("Zero")
+	case 1:
+		fmt.Println("One")
+	case 2:
+		fmt.Println("Two")
+	case 3:
+		fmt.Println("Three")
+	case 4:
+		fmt.Println("Four")
+	case 5:
+		fmt.Println("Five")
+	case 6:
+		fmt.Println("Six")
+	case 7:
+		fmt.Println("Seven")
+	case 8:
+		fmt.Println("Eight")
+	case 9:
+		fmt.Println("Nine")
+	case 10:
+		fmt.Println("Ten")
+	}
+	switch h {
+	case 0:
+		fmt.Println("Zero")
+	case 1:
+		fmt.Println("One")
+	case 2:
+		fmt.Println("Two")
+	case 3:
+		fmt.Println("Three")
+	case 4:
+		fmt.Println("Four")
+	case 5:
+		fmt.Println("Five")
+	case 6:
+		fmt.Println("Six")
+	case 7:
+		fmt.Println("Seven")
+	case 8:
+		fmt.Println("Eight")
+	case 9:
+		fmt.Println("Nine")
+	case 10:
+		fmt.Println("Ten")
+	}
 }
