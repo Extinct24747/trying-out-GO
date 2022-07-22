@@ -239,6 +239,8 @@ func main(){
 		fmt.Println("Nine")
 	case f==10:
 		fmt.Println("Ten")
+	default:
+		fmt.Println("El número no va de 0-10")
 	}
 	switch g {
 	case 0:
@@ -263,6 +265,8 @@ func main(){
 		fmt.Println("Nine")
 	case 10:
 		fmt.Println("Ten")
+	default:
+		fmt.Println("El número no va de 0-10")
 	}
 	switch h {
 	case 0:
@@ -287,5 +291,59 @@ func main(){
 		fmt.Println("Nine")
 	case 10:
 		fmt.Println("Ten")
+	default:
+		fmt.Println("El número no va de 0-10")
 	}
+	/*
+	Las funciones permiten definir bloques de código y
+	asignarles nombres para poder ejecutarlas cuantas
+	veces queramos solo con el nombre.
+	Un ejemplo de función es "Println".
+	Para ejecutar una función usamos el nombre seguido
+	de paréntesis.
+	*/
+	fmt.Println("Chau") //Println es la función, "Hola" es el argumento que le asignamos.
+	//Podemos llamar funciones designadas por nosotros.
+	bienvenido("Panchito")
+	suma (12, 4)
 }
+
+
+/*
+Además de las funciones definidas en los paquetes
+de Go podemos declarar las nuestras usando la
+palabra clave "func" seguida del nombre que le
+vayamos a asignar junto a unos paréntesis.
+También podemos asignarle argumentos a las funciones
+para que tomen input.
+Por ejemplo se puede agregar el argumento "nombre"
+a la función que creamos para que se use en el
+output.
+*/
+func bienvenido(nombre string) {
+	fmt.Println("Bienvenido, "+nombre)
+}
+/*
+La función declarada arriba permite a la función
+tomar un argumento del tipo string.
+El argumento es utilizado como si fuera una variable
+dentro del cuerpo de la función y usa su valor en
+el output.
+Para llamar a la función con sus argumentos pasamos
+un valor string dentro de los paréntesis al invocarla.
+*/
+
+/*
+También se puede hacer que una función tome más de
+un argumento usando comas para separarlas al momento
+de declarar la función.
+*/
+func suma(a int, b int) {
+	fmt.Println(a+b)
+}
+/*
+Si los argumentos son del mismo tipo podemos solo
+especificar el tipo del segundo.
+por ejemplo func suma(a, b int) en lugar de lo
+escrito arriba.
+*/
