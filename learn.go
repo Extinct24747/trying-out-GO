@@ -2,6 +2,16 @@
 package main
 
 /*
+Se pueden declarar variables fuera de las funciones,
+estas son llamadas funciones globales y pueden ser
+usadas a lo largo de todo el código.
+Sin embargo son consideradas malas prácticas y en su
+lugar es mejor usar los argumentos de las funcioes que
+declaremos.
+*/
+//var dog string = "dog name"
+
+/*
 Estas líneas se usan para importar paquetes con distintas
 funciones. fmt es usado para que el programa acepte imput
 y output. math es usado para operaciones aritméticas.
@@ -16,6 +26,37 @@ func main() no acepta argumentos, es la función que corre
 cuando ejecutamos el programa.
 */
 func main(){
+	/*
+	El alcance de una variable se refiere al espacio donde existe
+	dicha variable.
+	Una variable definida dentro de una función es llamada "local"
+	y solo existe dentro de esa función.
+	*/
+	var name string = "Nombre de alguien"
+	fmt.Println(name) //Si se intenta llamar esta variable desde otra función que no sea esta, se dará un error pues es local.
+
+	/*
+	La declaración defer sirve para que una función especifica no
+	se ejecute hasta que la función en la que está contenida se
+	ejecute.
+	Defer también puede ser usado para la limpieza de recursos
+	usados en el código. Esto lo aprendo después.
+	*/
+	defer bienvenido("Juan") //Esta línea no se ejecutará hasta el final de este bloque de código.
+
+	/*
+	Si usamos la declaración defer en múltiples funciones dentro
+	de un mismo bloque de código, estas se ejecutan desde la última
+	que escribimos hacia la primera.
+	De atrás para adelante.
+	*/
+	fmt.Println("Comienzo")
+	for m := 10; m >= 0; m-- {
+	    defer fmt.Println(m) //este código imprimer los números del 0 al 10, si no se usara el defer los imprimiría del 10 al 0 en este punto exacto del bloque, sin esperar a que lo finalice
+	}
+	fmt.Println("Fin")
+
+
 	/*
 	Para usar funciones específicas de algún paquete importado
 	debemos poner el nombre del paquete seguido de un punto y
@@ -81,7 +122,7 @@ func main(){
 	//Multiplicación
 	fmt.Println(num1 * num2)
 	//División
-	fmt.Println(num1 / num)
+	fmt.Println(num1 / num2)
 	//Módulo (resto de la divisón)
 	fmt.Println(num % num2)
 	/*
@@ -302,10 +343,13 @@ func main(){
 	Para ejecutar una función usamos el nombre seguido
 	de paréntesis.
 	*/
-	fmt.Println("Chau") //Println es la función, "Hola" es el argumento que le asignamos.
+	fmt.Println("Chau") //Println es la función, "Chau" es el argumento que le asignamos.
 	//Podemos llamar funciones designadas por nosotros.
 	bienvenido("Panchito")
 	suma (12, 4)
+	resultado := adición(12, 39)
+	fmt.Println(resultado + 5)
+	fmt.Println(división(10, 3))
 }
 
 
@@ -347,3 +391,24 @@ especificar el tipo del segundo.
 por ejemplo func suma(a, b int) en lugar de lo
 escrito arriba.
 */
+
+/*
+Se puede usar la declaración return al final de la
+función que declaremos para asignar el valor que
+obtengamos.
+El tipo de return debe ser escrito después de los
+argumentos que definamos.
+*/
+func adición(a, b int) int {
+    return a+b //Asigna el valor de a+b a la función.
+} // Podemos asignar el valor retornado de esta función a una variable.
+
+/*
+Go permite retornar varios valores con una sola
+función.
+Útil para imprimir el resultado de una operación
+y los errores que se puedan haber dado.
+*/
+func división(a,b int) (int, int) {
+    return a/b, a%b
+}
